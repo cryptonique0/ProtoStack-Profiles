@@ -1,6 +1,6 @@
+import type { Address } from 'viem';
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import type { Address } from 'viem';
 
 interface WalletState {
   // Connection state
@@ -37,7 +37,7 @@ export const useWalletStore = create<WalletState>()(
       ...initialState,
 
       setConnected: (isConnected) => set({ isConnected }),
-      
+
       setAddress: (address) =>
         set((state) => {
           if (address && !state.recentAddresses.includes(address)) {
@@ -48,19 +48,19 @@ export const useWalletStore = create<WalletState>()(
           }
           return { address };
         }),
-      
+
       setChainId: (chainId) => set({ chainId }),
-      
+
       setENS: (ensName, ensAvatar) => set({ ensName, ensAvatar }),
-      
+
       addRecentAddress: (address) =>
         set((state) => ({
-          recentAddresses: [
-            address,
-            ...state.recentAddresses.filter((a) => a !== address),
-          ].slice(0, 5),
+          recentAddresses: [address, ...state.recentAddresses.filter((a) => a !== address)].slice(
+            0,
+            5
+          ),
         })),
-      
+
       reset: () =>
         set((state) => ({
           ...initialState,
@@ -68,7 +68,7 @@ export const useWalletStore = create<WalletState>()(
         })),
     }),
     {
-      name: 'protostack-wallet',
+      name: 'protovm-wallet',
       partialize: (state) => ({
         recentAddresses: state.recentAddresses,
       }),

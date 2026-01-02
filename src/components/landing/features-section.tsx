@@ -2,18 +2,18 @@
 
 import { motion } from 'framer-motion';
 import {
-  Wallet,
-  Shield,
-  Image,
-  Globe,
-  Zap,
-  Lock,
-  Users,
-  Trophy,
+  Bell,
   Code,
   Database,
+  Globe,
+  Image,
+  Lock,
   Palette,
-  Bell,
+  Shield,
+  Trophy,
+  Users,
+  Wallet,
+  Zap,
 } from 'lucide-react';
 
 const features = [
@@ -41,15 +41,13 @@ const features = [
   {
     icon: Globe,
     title: 'Cross-Chain Profiles',
-    description:
-      'One profile across Ethereum, Polygon, Arbitrum, Optimism, Base, and more chains.',
+    description: 'One profile across Ethereum, Polygon, Arbitrum, Optimism, Base, and more chains.',
     color: 'from-web3-blue to-web3-cyan',
   },
   {
     icon: Zap,
     title: 'Instant Updates',
-    description:
-      'Real-time profile updates with optimistic UI and background synchronization.',
+    description: 'Real-time profile updates with optimistic UI and background synchronization.',
     color: 'from-web3-purple to-web3-pink',
   },
   {
@@ -77,14 +75,13 @@ const features = [
     icon: Code,
     title: 'Developer API',
     description:
-      'Integrate ProtoStack Profiles into your dApp with our comprehensive REST and GraphQL APIs.',
+      'Integrate ProtoVM Profiles into your dApp with our comprehensive REST and GraphQL APIs.',
     color: 'from-web3-blue to-web3-purple',
   },
   {
     icon: Database,
     title: 'IPFS Storage',
-    description:
-      'Profile data stored on IPFS for censorship resistance and true decentralization.',
+    description: 'Profile data stored on IPFS for censorship resistance and true decentralization.',
     color: 'from-web3-pink to-web3-orange',
   },
   {
@@ -129,8 +126,7 @@ export function FeaturesSection() {
             viewport={{ once: true }}
             className="text-3xl font-bold tracking-tight sm:text-4xl"
           >
-            Everything You Need for Your{' '}
-            <span className="gradient-text">Web3 Identity</span>
+            Everything You Need for Your <span className="gradient-text">Web3 Identity</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -139,8 +135,8 @@ export function FeaturesSection() {
             transition={{ delay: 0.1 }}
             className="mt-4 text-lg text-muted-foreground"
           >
-            A comprehensive profile system built from prototype to production.
-            Everything works out of the box.
+            A comprehensive profile system built from prototype to production. Everything works out
+            of the box.
           </motion.p>
         </div>
 
@@ -161,17 +157,15 @@ export function FeaturesSection() {
               <div
                 className={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-0 transition-opacity group-hover:opacity-5`}
               />
-              
+
               <div
                 className={`inline-flex rounded-xl bg-gradient-to-br ${feature.color} p-3 text-white`}
               >
                 <feature.icon className="h-6 w-6" />
               </div>
-              
+
               <h3 className="mt-4 text-lg font-semibold">{feature.title}</h3>
-              <p className="mt-2 text-sm text-muted-foreground">
-                {feature.description}
-              </p>
+              <p className="mt-2 text-sm text-muted-foreground">{feature.description}</p>
             </motion.div>
           ))}
         </motion.div>

@@ -71,10 +71,7 @@ export const useUIStore = create<UIState>()(
       pendingToasts: [],
       addToast: (toast) =>
         set((state) => ({
-          pendingToasts: [
-            ...state.pendingToasts,
-            { ...toast, id: crypto.randomUUID() },
-          ],
+          pendingToasts: [...state.pendingToasts, { ...toast, id: crypto.randomUUID() }],
         })),
       removeToast: (id) =>
         set((state) => ({
@@ -82,7 +79,7 @@ export const useUIStore = create<UIState>()(
         })),
     }),
     {
-      name: 'protostack-ui',
+      name: 'protovm-ui',
       partialize: (state) => ({
         theme: state.theme,
         sidebarOpen: state.sidebarOpen,

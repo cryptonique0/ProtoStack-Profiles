@@ -1,9 +1,9 @@
 'use client';
 
+import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 import { ArrowRight, Github, Rocket } from 'lucide-react';
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
 
 export function CTASection() {
   return (
@@ -20,12 +20,11 @@ export function CTASection() {
           className="mx-auto max-w-3xl text-center"
         >
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
-            Ready to Build Your{' '}
-            <span className="gradient-text">Web3 Identity</span>?
+            Ready to Build Your <span className="gradient-text">Web3 Identity</span>?
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-lg text-muted-foreground">
-            Join thousands of builders, creators, and collectors who trust ProtoStack Profiles
-            for their decentralized identity.
+            Join thousands of builders, creators, and collectors who trust ProtoVM Profiles for
+            their decentralized identity.
           </p>
 
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -38,7 +37,7 @@ export function CTASection() {
             </Button>
             <Button variant="outline" size="lg" asChild>
               <Link
-                href="https://github.com/cryptonique0/ProtoStack-Profiles"
+                href="https://github.com/cryptonique0/ProtoVM-Profiles"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -56,9 +55,7 @@ export function CTASection() {
             transition={{ delay: 0.3 }}
             className="mt-16"
           >
-            <p className="mb-4 text-sm text-muted-foreground">
-              Built with the ProtoStack
-            </p>
+            <p className="mb-4 text-sm text-muted-foreground">Built with the ProtoVM</p>
             <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground">
               {[
                 'Next.js 14',

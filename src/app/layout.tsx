@@ -1,8 +1,8 @@
+import { Toaster } from '@/components/ui/toaster';
+import '@/styles/globals.css';
 import type { Metadata, Viewport } from 'next';
 import { Inter, JetBrains_Mono } from 'next/font/google';
-import '@/styles/globals.css';
 import { Providers } from './providers';
-import { Toaster } from '@/components/ui/toaster';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -19,8 +19,8 @@ const mono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'),
   title: {
-    default: 'ProtoStack Profiles | Web3-Native User Profiles',
-    template: '%s | ProtoStack Profiles',
+    default: 'ProtoVM Profiles | Web3-Native User Profiles',
+    template: '%s | ProtoVM Profiles',
   },
   description:
     'Create and manage your Web3-native user profile. Connect your wallet, showcase your NFTs, verify your identity on-chain, and build your decentralized reputation.',
@@ -35,17 +35,17 @@ export const metadata: Metadata = {
     'DID',
     'Wallet',
     'Crypto',
-    'ProtoStack',
+    'ProtoVM',
   ],
-  authors: [{ name: 'ProtoStack', url: 'https://protostack.dev' }],
-  creator: 'ProtoStack',
-  publisher: 'ProtoStack',
+  authors: [{ name: 'ProtoVM', url: 'https://protovm.dev' }],
+  creator: 'ProtoVM',
+  publisher: 'ProtoVM',
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: '/',
-    siteName: 'ProtoStack Profiles',
-    title: 'ProtoStack Profiles | Web3-Native User Profiles',
+    siteName: 'ProtoVM Profiles',
+    title: 'ProtoVM Profiles | Web3-Native User Profiles',
     description:
       'Create and manage your Web3-native user profile. Connect your wallet, showcase your NFTs, verify your identity on-chain.',
     images: [
@@ -53,17 +53,17 @@ export const metadata: Metadata = {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'ProtoStack Profiles',
+        alt: 'ProtoVM Profiles',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ProtoStack Profiles | Web3-Native User Profiles',
+    title: 'ProtoVM Profiles | Web3-Native User Profiles',
     description:
       'Create and manage your Web3-native user profile. Connect your wallet, showcase your NFTs, verify your identity on-chain.',
     images: ['/og-image.png'],
-    creator: '@protostack',
+    creator: '@protovm',
   },
   robots: {
     index: true,
@@ -94,11 +94,7 @@ export const viewport: Viewport = {
   maximumScale: 1,
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} ${mono.variable} font-sans antialiased`}>

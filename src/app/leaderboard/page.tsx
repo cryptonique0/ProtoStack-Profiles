@@ -4,21 +4,21 @@ import { LeaderboardContent } from '@/components/leaderboard/leaderboard-content
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Leaderboard | ProtoStack Profiles',
+  title: 'Leaderboard | ProtoVM Profiles',
   description: 'See the top Web3 profiles ranked by points, badges, and followers',
 };
 
 export default function LeaderboardPage() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="flex min-h-screen flex-col">
       <Header />
       <main className="flex-1">
         <div className="container py-8">
-          <div className="text-center max-w-2xl mx-auto mb-12">
-            <h1 className="text-4xl font-bold mb-4">
+          <div className="mx-auto mb-12 max-w-2xl text-center">
+            <h1 className="mb-4 text-4xl font-bold">
               Profile <span className="gradient-text">Leaderboard</span>
             </h1>
-            <p className="text-muted-foreground text-lg">
+            <p className="text-lg text-muted-foreground">
               Discover the most active and engaged members of the community
             </p>
           </div>

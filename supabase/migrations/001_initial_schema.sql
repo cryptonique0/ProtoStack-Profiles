@@ -1,4 +1,4 @@
--- ProtoStack Profiles Database Schema
+-- ProtoVM Profiles Database Schema
 -- Run this migration in Supabase SQL Editor
 
 -- Enable UUID extension
@@ -276,13 +276,13 @@ CREATE POLICY "Users can update their own notifications"
 
 -- Insert default badges
 INSERT INTO badges (name, description, image_url, category, rarity, points) VALUES
-  ('Early Adopter', 'One of the first to join ProtoStack', 'https://api.protostack.dev/badges/early-adopter.png', 'achievement', 'epic', 100),
-  ('Profile Creator', 'Created a profile on ProtoStack', 'https://api.protostack.dev/badges/profile-creator.png', 'achievement', 'common', 50),
-  ('Verified', 'Verified identity on ProtoStack', 'https://api.protostack.dev/badges/verified.png', 'achievement', 'rare', 200),
-  ('Community Builder', 'Followed 10 or more profiles', 'https://api.protostack.dev/badges/community-builder.png', 'community', 'uncommon', 75),
-  ('Social Butterfly', 'Gained 100 or more followers', 'https://api.protostack.dev/badges/social-butterfly.png', 'community', 'rare', 150),
-  ('NFT Collector', 'Owns 10 or more NFTs', 'https://api.protostack.dev/badges/nft-collector.png', 'achievement', 'uncommon', 75),
-  ('Diamond Hands', 'Member for over 1 year', 'https://api.protostack.dev/badges/diamond-hands.png', 'achievement', 'legendary', 500),
-  ('Bug Hunter', 'Reported a valid bug', 'https://api.protostack.dev/badges/bug-hunter.png', 'special', 'epic', 250),
-  ('Contributor', 'Contributed to ProtoStack', 'https://api.protostack.dev/badges/contributor.png', 'special', 'legendary', 1000)
+  ('Early Adopter', 'One of the first to join ProtoVM', 'https://api.protovm.dev/badges/early-adopter.png', 'achievement', 'epic', 100),
+  ('Profile Creator', 'Created a profile on ProtoVM', 'https://api.protovm.dev/badges/profile-creator.png', 'achievement', 'common', 50),
+  ('Verified', 'Verified identity on ProtoVM', 'https://api.protovm.dev/badges/verified.png', 'achievement', 'rare', 200),
+  ('Community Builder', 'Followed 10 or more profiles', 'https://api.protovm.dev/badges/community-builder.png', 'community', 'uncommon', 75),
+  ('Social Butterfly', 'Gained 100 or more followers', 'https://api.protovm.dev/badges/social-butterfly.png', 'community', 'rare', 150),
+  ('NFT Collector', 'Owns 10 or more NFTs', 'https://api.protovm.dev/badges/nft-collector.png', 'achievement', 'uncommon', 75),
+  ('Diamond Hands', 'Member for over 1 year', 'https://api.protovm.dev/badges/diamond-hands.png', 'achievement', 'legendary', 500),
+  ('Bug Hunter', 'Reported a valid bug', 'https://api.protovm.dev/badges/bug-hunter.png', 'special', 'epic', 250),
+  ('Contributor', 'Contributed to ProtoVM', 'https://api.protovm.dev/badges/contributor.png', 'special', 'legendary', 1000)
 ON CONFLICT DO NOTHING;

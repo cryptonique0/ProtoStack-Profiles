@@ -1,5 +1,5 @@
 {
-  "name": "protostack-profiles",
+  "name": "protovm-profiles",
   "version": "1.0.0",
   "description": "Web3-native user profiles system - From Prototype to Production",
   "private": true,

@@ -1,7 +1,7 @@
+import type { ProfileFormData, ProfileStats } from '@/types';
+import type { Profile } from '@/types/database.types';
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import type { Profile } from '@/types/database.types';
-import type { ProfileFormData, ProfileStats } from '@/types';
 
 interface ProfileState {
   // Current user's profile
@@ -32,13 +32,13 @@ export const useProfileStore = create<ProfileState>()(
       ...initialState,
 
       setProfile: (profile) => set({ profile, error: null }),
-      
+
       setStats: (stats) => set({ stats }),
-      
+
       setLoading: (isLoading) => set({ isLoading }),
-      
+
       setError: (error) => set({ error, isLoading: false }),
-      
+
       updateProfile: (updates) =>
         set((state) => ({
           profile: state.profile
@@ -55,11 +55,11 @@ export const useProfileStore = create<ProfileState>()(
               }
             : null,
         })),
-      
+
       reset: () => set(initialState),
     }),
     {
-      name: 'protostack-profile',
+      name: 'protovm-profile',
       partialize: (state) => ({
         profile: state.profile,
         stats: state.stats,

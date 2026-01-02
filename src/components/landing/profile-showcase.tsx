@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion';
 import { BadgeCheck, ExternalLink } from 'lucide-react';
-import Image from 'next/image';
 import Link from 'next/link';
 
 const showcaseProfiles = [
@@ -64,7 +63,7 @@ export function ProfileShowcase() {
             transition={{ delay: 0.1 }}
             className="mt-4 text-lg text-muted-foreground"
           >
-            Thousands of Web3 builders, collectors, and enthusiasts already using ProtoStack Profiles.
+            Thousands of Web3 builders, collectors, and enthusiasts already using ProtoVM Profiles.
           </motion.p>
         </div>
 
@@ -76,7 +75,7 @@ export function ProfileShowcase() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="group profile-card card-hover"
+              className="profile-card card-hover group"
             >
               {/* Background gradient */}
               <div className="absolute inset-0 -z-10 bg-gradient-to-br from-web3-purple/5 via-transparent to-web3-cyan/5 opacity-0 transition-opacity group-hover:opacity-100" />
@@ -98,17 +97,12 @@ export function ProfileShowcase() {
               {/* Info */}
               <div className="mt-4 text-center">
                 <h3 className="font-semibold">{profile.name}</h3>
-                <p className="mt-1 text-sm text-muted-foreground line-clamp-1">
-                  {profile.bio}
-                </p>
+                <p className="mt-1 line-clamp-1 text-sm text-muted-foreground">{profile.bio}</p>
 
                 {/* Badges */}
                 <div className="mt-3 flex flex-wrap justify-center gap-1">
                   {profile.badges.slice(0, 2).map((badge) => (
-                    <span
-                      key={badge}
-                      className="rounded-full bg-muted px-2 py-0.5 text-xs"
-                    >
+                    <span key={badge} className="rounded-full bg-muted px-2 py-0.5 text-xs">
                       {badge}
                     </span>
                   ))}
@@ -121,10 +115,7 @@ export function ProfileShowcase() {
               </div>
 
               {/* Hover link */}
-              <Link
-                href={`/profile/${profile.name}`}
-                className="absolute inset-0 z-10"
-              >
+              <Link href={`/profile/${profile.name}`} className="absolute inset-0 z-10">
                 <span className="sr-only">View profile</span>
               </Link>
             </motion.div>

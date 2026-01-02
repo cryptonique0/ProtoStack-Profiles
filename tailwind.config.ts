@@ -50,7 +50,7 @@ const config: Config = {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
         },
-        // ProtoStack brand colors
+        // ProtoVM brand colors
         proto: {
           50: '#f0f9ff',
           100: '#e0f2fe',

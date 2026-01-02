@@ -51,8 +51,8 @@ export function Providers({ children }: ProvidersProps) {
             }}
             modalSize="compact"
             appInfo={{
-              appName: 'ProtoStack Profiles',
-              learnMoreUrl: 'https://protostack.dev/profiles',
+              appName: 'ProtoVM Profiles',
+              learnMoreUrl: 'https://protovm.dev/profiles',
             }}
           >
             <ThemeProvider

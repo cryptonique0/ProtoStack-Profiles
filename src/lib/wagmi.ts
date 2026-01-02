@@ -31,7 +31,7 @@ const testnetChains = [
 const allChains = [...productionChains, ...testnetChains] as const;
 
 export const wagmiConfig = getDefaultConfig({
-  appName: 'ProtoStack Profiles',
+  appName: 'ProtoVM Profiles',
   projectId,
   chains: allChains,
   ssr: true,

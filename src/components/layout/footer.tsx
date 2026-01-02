@@ -1,5 +1,5 @@
+import { Github, MessageCircle, Twitter } from 'lucide-react';
 import Link from 'next/link';
-import { Github, Twitter, MessageCircle } from 'lucide-react';
 
 const footerLinks = {
   product: [
@@ -28,9 +28,9 @@ const footerLinks = {
 };
 
 const socialLinks = [
-  { name: 'GitHub', href: 'https://github.com/cryptonique0/ProtoStack-Profiles', icon: Github },
-  { name: 'Twitter', href: 'https://twitter.com/protostack', icon: Twitter },
-  { name: 'Discord', href: 'https://discord.gg/protostack', icon: MessageCircle },
+  { name: 'GitHub', href: 'https://github.com/cryptonique0/ProtoVM-Profiles', icon: Github },
+  { name: 'Twitter', href: 'https://twitter.com/protovm', icon: Twitter },
+  { name: 'Discord', href: 'https://discord.gg/protovm', icon: MessageCircle },
 ];
 
 export function Footer() {
@@ -42,13 +42,13 @@ export function Footer() {
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-2">
               <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-web3-purple to-web3-blue" />
-              <span className="font-bold text-xl">
-                Proto<span className="gradient-text">Stack</span>
+              <span className="text-xl font-bold">
+                Proto<span className="gradient-text">VM</span>
               </span>
             </Link>
             <p className="mt-4 max-w-xs text-sm text-muted-foreground">
-              Web3-native user profiles. From prototype to production.
-              Build your decentralized identity today.
+              Web3-native user profiles. From prototype to production. Build your decentralized
+              identity today.
             </p>
             <div className="mt-6 flex gap-4">
               {socialLinks.map((item) => (
@@ -119,11 +119,9 @@ export function Footer() {
         <div className="mt-12 border-t pt-8">
           <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
             <p className="text-sm text-muted-foreground">
-              &copy; {new Date().getFullYear()} ProtoStack. All rights reserved.
+              &copy; {new Date().getFullYear()} ProtoVM. All rights reserved.
             </p>
-            <p className="text-sm text-muted-foreground">
-              Built with ❤️ by the Web3 community
-            </p>
+            <p className="text-sm text-muted-foreground">Built with ❤️ by the Web3 community</p>
           </div>
         </div>
       </div>

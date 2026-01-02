@@ -11,11 +11,9 @@ interface ProfilePageProps {
   params: { identifier: string };
 }
 
-export async function generateMetadata({
-  params,
-}: ProfilePageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: ProfilePageProps): Promise<Metadata> {
   const { identifier } = params;
-  
+
   // Try to fetch profile by address or username/ENS
   let profile;
   if (identifier.startsWith('0x')) {
@@ -33,11 +31,11 @@ export async function generateMetadata({
   const displayName = profile.display_name || profile.ens_name || profile.address.slice(0, 10);
 
   return {
-    title: `${displayName} | ProtoStack Profiles`,
-    description: profile.bio || `View ${displayName}'s Web3 profile on ProtoStack`,
+    title: `${displayName} | ProtoVM Profiles`,
+    description: profile.bio || `View ${displayName}'s Web3 profile on ProtoVM`,
     openGraph: {
-      title: `${displayName} | ProtoStack Profiles`,
-      description: profile.bio || `View ${displayName}'s Web3 profile on ProtoStack`,
+      title: `${displayName} | ProtoVM Profiles`,
+      description: profile.bio || `View ${displayName}'s Web3 profile on ProtoVM`,
       images: profile.avatar_url ? [profile.avatar_url] : undefined,
     },
   };
@@ -45,7 +43,7 @@ export async function generateMetadata({
 
 export default async function ProfilePage({ params }: ProfilePageProps) {
   const { identifier } = params;
-  
+
   // Try to fetch profile by address or username/ENS
   let profile;
   if (identifier.startsWith('0x')) {
@@ -61,7 +59,7 @@ export default async function ProfilePage({ params }: ProfilePageProps) {
   const stats = await ProfileService.getStats(profile.address);
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="flex min-h-screen flex-col">
       <Header />
       <main className="flex-1">
         <ProfileHeader profile={profile} stats={stats} />

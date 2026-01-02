@@ -1,82 +1,91 @@
-# ProtoStack Profiles 🚀
+# ProtoVM Profiles 🚀
 
-A comprehensive Web3-native user profiles system built on the ProtoStack foundation. Create, manage, and showcase your decentralized identity across multiple chains.
+A comprehensive Web3-native user profiles system built on the ProtoVM foundation. Create, manage, and showcase your decentralized identity across multiple chains.
 
-![ProtoStack Profiles](https://via.placeholder.com/1200x600/1a1a2e/ffffff?text=ProtoStack+Profiles)
+![ProtoVM Profiles](https://via.placeholder.com/1200x600/1a1a2e/ffffff?text=ProtoVM+Profiles)
 
 ## ✨ Features
 
 ### 🔐 Authentication
+
 - **Wallet Connection** - Connect with MetaMask, WalletConnect, Coinbase Wallet, and more via RainbowKit
 - **Sign-In with Ethereum (SIWE)** - Secure wallet-based authentication
 - **OAuth Support** - Traditional auth with GitHub, Google, Twitter, Discord
 - **Multi-chain Support** - Ethereum, Polygon, Arbitrum, Optimism, Base + testnets
 
 ### 👤 Profile Management
+
 - **Customizable Profiles** - Display name, bio, avatar, cover image
 - **ENS Integration** - Automatic ENS name and avatar resolution
 - **IPFS Storage** - Decentralized profile data storage
 - **Privacy Controls** - Control what information is public
 
 ### 🏆 Gamification
+
 - **Achievement Badges** - Earn NFT badges for activities
 - **Points System** - Accumulate points from badges and activities
 - **Leaderboards** - Compete for top positions
 - **Activity Feed** - Track profile activities
 
 ### 🎨 NFT Integration
+
 - **NFT Avatars** - Use NFTs as profile pictures
 - **NFT Gallery** - Showcase your NFT collection
 - **On-chain Verification** - Verify profile ownership on-chain
 
 ### 📊 Analytics
+
 - **PostHog Integration** - Privacy-friendly analytics
 - **Web3 Event Tracking** - Track wallet connections, transactions
 - **Profile Statistics** - Views, followers, engagement metrics
 
 ## 🛠 Tech Stack
 
-| Category | Technology |
-|----------|------------|
-| **Frontend** | Next.js 14, React 18, TypeScript |
-| **Styling** | Tailwind CSS, Framer Motion, Radix UI |
-| **Web3** | Wagmi v2, RainbowKit v2, viem, ethers.js |
-| **State** | Zustand with persist middleware |
-| **Backend** | Supabase (PostgreSQL), NextAuth |
-| **Storage** | IPFS (NFT.Storage, Pinata) |
-| **Contracts** | Solidity, Hardhat, OpenZeppelin |
-| **Analytics** | PostHog |
-| **Testing** | Vitest, Playwright, Storybook |
+| Category      | Technology                               |
+| ------------- | ---------------------------------------- |
+| **Frontend**  | Next.js 14, React 18, TypeScript         |
+| **Styling**   | Tailwind CSS, Framer Motion, Radix UI    |
+| **Web3**      | Wagmi v2, RainbowKit v2, viem, ethers.js |
+| **State**     | Zustand with persist middleware          |
+| **Backend**   | Supabase (PostgreSQL), NextAuth          |
+| **Storage**   | IPFS (NFT.Storage, Pinata)               |
+| **Contracts** | Solidity, Hardhat, OpenZeppelin          |
+| **Analytics** | PostHog                                  |
+| **Testing**   | Vitest, Playwright, Storybook            |
 
 ## 🚀 Getting Started
 
 ### Prerequisites
 
-- Node.js 18+ 
+- Node.js 18+
 - pnpm (recommended) or npm
 - Git
 
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
-   git clone https://github.com/yourusername/protostack-profiles.git
-   cd protostack-profiles
+   git clone https://github.com/yourusername/protovm-profiles.git
+   cd protovm-profiles
    ```
 
 2. **Install dependencies**
+
    ```bash
    pnpm install
    ```
 
 3. **Set up environment variables**
+
    ```bash
    cp .env.example .env.local
    ```
-   
+
    Fill in the required environment variables (see [Environment Variables](#environment-variables))
 
 4. **Start the development server**
+
    ```bash
    pnpm dev
    ```
@@ -118,11 +127,11 @@ NEXT_PUBLIC_POSTHOG_HOST=https://app.posthog.com
 ## 📁 Project Structure
 
 ```
-protostack-profiles/
+protovm-profiles/
 ├── contracts/              # Solidity smart contracts
-│   ├── ProtoStackProfileRegistry.sol
-│   ├── ProtoStackProfileNFT.sol
-│   └── ProtoStackBadges.sol
+│   ├── ProtoVMProfileRegistry.sol
+│   ├── ProtoVMProfileNFT.sol
+│   └── ProtoVMBadges.sol
 ├── scripts/                # Deployment scripts
 ├── test/                   # Contract tests
 ├── src/
@@ -149,28 +158,34 @@ protostack-profiles/
 
 ## 🔧 Smart Contracts
 
-### ProtoStackProfileRegistry
+### ProtoVMProfileRegistry
+
 Upgradeable registry for on-chain profile data. Stores IPFS hashes and verification status.
 
 **Key Features:**
+
 - Profile creation with unique usernames
 - IPFS hash storage for profile data
 - Verification system with authorized verifiers
 - Fee management for profile creation/username changes
 
-### ProtoStackProfileNFT
+### ProtoVMProfileNFT
+
 Soulbound ERC-721 token representing user profiles.
 
 **Key Features:**
+
 - One NFT per address (soulbound by default)
 - Mintable profile NFTs
 - Updateable token URI
 - Optional transferability
 
-### ProtoStackBadges
+### ProtoVMBadges
+
 ERC-1155 multi-token for achievement badges.
 
 **Key Features:**
+
 - Multiple badge types with metadata
 - Points system
 - Category organization
@@ -180,16 +195,19 @@ ERC-1155 multi-token for achievement badges.
 ### Deploying Contracts
 
 1. **Compile contracts**
+
    ```bash
    npx hardhat compile
    ```
 
 2. **Run tests**
+
    ```bash
    npx hardhat test
    ```
 
 3. **Deploy to testnet**
+
    ```bash
    npx hardhat run scripts/deploy.js --network sepolia
    ```
@@ -211,43 +229,48 @@ ERC-1155 multi-token for achievement badges.
 - **notifications** - User notifications
 
 Run migrations:
+
 ```bash
 pnpm supabase db push
 ```
 
 ## 📖 API Routes
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| POST | `/api/auth/[...nextauth]` | NextAuth authentication |
-| GET/POST | `/api/auth/siwe/nonce` | SIWE nonce generation |
-| POST | `/api/auth/siwe/verify` | SIWE signature verification |
-| GET/POST | `/api/profiles` | List/create profiles |
-| GET/PUT | `/api/profiles/[address]` | Get/update single profile |
-| GET | `/api/profiles/search` | Search profiles |
-| POST/DELETE | `/api/follow` | Follow/unfollow |
-| GET | `/api/badges` | List all badges |
-| GET | `/api/badges/[address]` | User's badges |
-| GET/POST | `/api/activity` | Activity feed |
+| Method      | Endpoint                  | Description                 |
+| ----------- | ------------------------- | --------------------------- |
+| POST        | `/api/auth/[...nextauth]` | NextAuth authentication     |
+| GET/POST    | `/api/auth/siwe/nonce`    | SIWE nonce generation       |
+| POST        | `/api/auth/siwe/verify`   | SIWE signature verification |
+| GET/POST    | `/api/profiles`           | List/create profiles        |
+| GET/PUT     | `/api/profiles/[address]` | Get/update single profile   |
+| GET         | `/api/profiles/search`    | Search profiles             |
+| POST/DELETE | `/api/follow`             | Follow/unfollow             |
+| GET         | `/api/badges`             | List all badges             |
+| GET         | `/api/badges/[address]`   | User's badges               |
+| GET/POST    | `/api/activity`           | Activity feed               |
 
 ## 🧪 Testing
 
 ### Unit Tests
+
 ```bash
 pnpm test
 ```
 
 ### E2E Tests
+
 ```bash
 pnpm test:e2e
 ```
 
 ### Contract Tests
+
 ```bash
 npx hardhat test
 ```
 
 ### Coverage
+
 ```bash
 pnpm coverage
 npx hardhat coverage
@@ -268,8 +291,8 @@ vercel
 ### Docker
 
 ```bash
-docker build -t protostack-profiles .
-docker run -p 3000:3000 protostack-profiles
+docker build -t protovm-profiles .
+docker run -p 3000:3000 protovm-profiles
 ```
 
 ## 🤝 Contributing
@@ -294,4 +317,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-Built with ❤️ by the ProtoStack team
+Built with ❤️ by the ProtoVM team

@@ -4,9 +4,11 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowRight, Wallet, Shield, Sparkles, Globe } from 'lucide-react';
 import { ConnectButton } from '@rainbow-me/rainbowkit';
+import { useAccount } from 'wagmi';
 import { Button } from '@/components/ui/button';
 
 export function HeroSection() {
+  const { isConnected, address } = useAccount();
   return (
     <section className="relative overflow-hidden py-20 sm:py-32">
       {/* Background gradient */}
@@ -78,29 +80,32 @@ export function HeroSection() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
           >
-            <ConnectButton.Custom>
-              {({ openConnectModal, connected }) => (
-                <Button
-                  size="lg"
-                  className="wallet-button group"
-                  onClick={connected ? undefined : openConnectModal}
-                  asChild={connected}
-                >
-                  {connected ? (
-                    <Link href="/profile">
-                      <Wallet className="mr-2 h-5 w-5" />
-                      Go to Profile
-                      <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                    </Link>
-                  ) : (
-                    <>
-                      <Wallet className="mr-2 h-5 w-5" />
-                      Connect Wallet
-                    </>
-                  )}
-                </Button>
-              )}
-            </ConnectButton.Custom>
+            {isConnected ? (
+              <Button
+                size="lg"
+                className="wallet-button group"
+                asChild
+              >
+                <Link href={`/profile/${address}`}>
+                  <Wallet className="mr-2 h-5 w-5" />
+                  View My Profile
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </Button>
+            ) : (
+              <ConnectButton.Custom>
+                {({ openConnectModal }) => (
+                  <Button
+                    size="lg"
+                    className="wallet-button group"
+                    onClick={openConnectModal}
+                  >
+                    <Wallet className="mr-2 h-5 w-5" />
+                    Connect Wallet
+                  </Button>
+                )}
+              </ConnectButton.Custom>
+            )}
             <Button variant="outline" size="lg" asChild>
               <Link href="/explore">
                 <Globe className="mr-2 h-5 w-5" />
