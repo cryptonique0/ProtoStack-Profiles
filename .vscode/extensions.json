@@ -1,0 +1,20 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "bradlc.vscode-tailwindcss",
+    "formulahendry.auto-rename-tag",
+    "christian-kohler.path-intellisense",
+    "mikestead.dotenv",
+    "ms-azuretools.vscode-docker",
+    "eamodio.gitlens",
+    "JuanBlanco.solidity",
+    "NomicFoundation.hardhat-solidity",
+    "tintinweb.solidity-visual-auditor",
+    "usernamehw.errorlens",
+    "streetsidesoftware.code-spell-checker",
+    "Prisma.prisma",
+    "csstools.postcss",
+    "ms-playwright.playwright"
+  ]
+}
